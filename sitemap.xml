@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://lockframe.games/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lockframe.games/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://lockframe.games/tr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lockframe.games/" />
+  </url>
+  <url>
+    <loc>https://lockframe.games/tr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lockframe.games/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://lockframe.games/tr/" />
+  </url>
+  <url>
+    <loc>https://lockframe.games/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lockframe.games/privacy/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://lockframe.games/privacy/tr/" />
+  </url>
+  <url>
+    <loc>https://lockframe.games/privacy/tr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lockframe.games/privacy/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://lockframe.games/privacy/tr/" />
+  </url>
+  <url>
+    <loc>https://lockframe.games/support/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lockframe.games/support/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://lockframe.games/support/tr/" />
+  </url>
+  <url>
+    <loc>https://lockframe.games/support/tr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lockframe.games/support/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://lockframe.games/support/tr/" />
+  </url>
+</urlset>
+

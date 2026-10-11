@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4ef">
+  <meta name="description" content="Privacy Policy for LOCKFRAME: Perspective Run and lockframe.games.">
+  <meta name="robots" content="index,follow">
+  <title>Privacy Policy — LOCKFRAME</title>
+  <link rel="canonical" href="https://lockframe.games/privacy/">
+  <link rel="alternate" hreflang="en" href="https://lockframe.games/privacy/">
+  <link rel="alternate" hreflang="tr" href="https://lockframe.games/privacy/tr/">
+  <link rel="icon" href="/assets/images/app-icon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="/" aria-label="LOCKFRAME home"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">LOCKFRAME</span></a>
+      <div class="nav-links"><a href="/">Game</a><a href="/support/">Support</a><a class="lang-link" href="/privacy/tr/" lang="tr" hreflang="tr">TR</a></div>
+    </nav>
+  </header>
+
+  <main id="main" class="legal-main shell">
+    <header class="page-hero">
+      <p class="eyebrow">Privacy Policy</p>
+      <h1>Your perspective is yours.</h1>
+      <p class="page-lede">This policy explains how LOCKFRAME: Perspective Run and this website handle information. It is written from a review of the current game client, Google advertising integration and Prism wallet backend.</p>
+      <p class="updated"><strong>Last updated:</strong> October 11, 2026 · <strong>Effective:</strong> when the public release becomes available</p>
+    </header>
+
+    <div class="legal-layout">
+      <nav class="toc" aria-label="Privacy policy sections">
+        <strong>On this page</strong>
+        <a href="#scope">Scope</a>
+        <a href="#collect">Information</a>
+        <a href="#use">How it is used</a>
+        <a href="#sharing">Sharing</a>
+        <a href="#retention">Retention</a>
+        <a href="#choices">Your choices</a>
+        <a href="#security">Security</a>
+        <a href="#children">Children</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <article class="legal-content">
+        <section id="scope">
+          <h2>1. Scope and current status</h2>
+          <p>This policy covers the LOCKFRAME iOS game and <strong>lockframe.games</strong>. “We” and “LOCKFRAME” mean the game developer. The public game is not yet available on the App Store. As of the date above, the rewarded-ad and wallet systems are implemented in code, but their production services still require final external setup and live-device validation. This policy must be checked again against the exact shipping build before release.</p>
+          <p class="notice"><strong>No website tracking:</strong> this website sets no cookies, runs no analytics, contains no advertising scripts and has no forms or login wall. The Privacy Policy is available publicly without consent prompts.</p>
+        </section>
+
+        <section id="collect">
+          <h2>2. Information handled</h2>
+          <h3>On-device game data</h3>
+          <p>The game stores progress and settings on your device, including scores, distance, tutorial state, missions, world mastery, inventory, selected language, recent openings and currency state. This information supports gameplay and restoring your local experience. Uninstalling or resetting the app may remove local data, except information separately held by Apple, Google or the Prism wallet service.</p>
+
+          <h3>Prism wallet and server-side player account</h3>
+          <p>When the production wallet service is enabled, the game automatically creates a pseudonymous player account. It does not ask for a profile name, email address, phone number or password. The service is designed to store:</p>
+          <ul class="data-list">
+            <li><strong>Account and authentication</strong>A random player UUID; a one-way hash of each device credential; account creation, last-seen and credential timestamps; and the credential source. The newest ten credential hashes may be retained so multiple devices do not sign each other out.</li>
+            <li><strong>Wallet and gameplay ledger</strong>Purchased and earned Prism balances, refund debt, wallet version and timestamps; and ledger entries such as operation ID, grant/spend/refund type, amount, reason, product ID, environment and time.</li>
+            <li><strong>Apple purchase records</strong>Apple transaction and original transaction identifiers, product ID, credited Prism amount, StoreKit environment, purchase date, revocation date and record creation date. LOCKFRAME does not receive your payment-card details.</li>
+            <li><strong>Apple-linked recovery identifiers</strong>An Apple-signed App Transaction identifier and environment may be stored to recover the wallet across reinstall or devices. If Sign in with Apple is used, the stable Apple subject identifier is stored. The current implementation requests an identity token only and does not request your name or email address.</li>
+          </ul>
+          <p>The device keeps an authentication credential in Apple Keychain for convenience. The server stores only a SHA-256 hash of the secret, not the secret itself.</p>
+
+          <h3>Apple in-app purchases</h3>
+          <p>Prism purchases use Apple In-App Purchase through StoreKit. The game sends Apple-signed transaction data to the wallet service so it can verify the purchase, credit it once, restore the remaining purchased balance and process refund or revocation notices. Apple processes payment and may handle information under the <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a>.</p>
+
+          <h3>Sign in with Apple</h3>
+          <p>The client and backend include Sign in with Apple for wallet protection and recovery. On supported systems the game first tries automatic recovery using Apple’s App Transaction. Sign in with Apple is optional when that durable identity is available; it may be required before a real-money purchase when no durable Apple-verified identity exists. Nothing is charged before that identity step succeeds.</p>
+
+          <h3>Google AdMob rewarded ads</h3>
+          <p>The game includes Google Mobile Ads for <strong>rewarded ads only</strong>. The planned placement is the first death in an Adventure run. Ads do not appear in the tutorial, Daily Frame, later deaths or the Apple Watch app. Watching is optional; closing early or an ad failure grants no reward, and declining consent does not block the rest of the game.</p>
+          <p>Google’s SDK may process information needed to serve, measure, secure and diagnose ads, including IP address and approximate location, device or app identifiers, ad and product interactions, advertising data, performance data, crash data and other diagnostics. Google’s exact handling depends on device settings, region, consent choices and the mode of ad delivery. See <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>.</p>
+          <p>The current LOCKFRAME configuration does not request App Tracking Transparency authorization and is not intended to access the IDFA or track you across other companies’ apps and websites. Google may still use other identifiers and data for limited advertising, frequency capping, aggregated reporting, security and fraud prevention where permitted.</p>
+
+          <h3>Google User Messaging Platform (UMP)</h3>
+          <p>UMP asks for updated consent information before the game requests an ad and shows Google’s consent form when required for your region. Ads are requested only when the SDK reports that they may be requested. Where required, the Help screen offers a Privacy Options entry so you can revisit your choice. The exact message still has to be configured in the AdMob console before public release.</p>
+
+          <h3>Analytics and diagnostics</h3>
+          <p>LOCKFRAME has no separate third-party gameplay analytics SDK. Gameplay event tracking in the reviewed build is local: in developer builds it can write event names to the device log when a debug flag is enabled, and it is not uploaded by LOCKFRAME. Unity Analytics and Unity Cloud Diagnostics are disabled in the reviewed project settings. Google Mobile Ads and UMP may independently collect ad-related interaction, performance, crash and diagnostic information as described above. Apple may provide App Store or TestFlight diagnostics according to your Apple settings and Apple’s terms.</p>
+
+          <h3>This website</h3>
+          <p>The site does not deliberately collect personal information. It has no accounts, forms, cookies, analytics pixels or ad SDKs. Cloudflare Pages hosts the site and may process network and security information such as IP address, request time, requested URL and user-agent data to deliver and protect it. See the <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare Privacy Policy</a>.</p>
+        </section>
+
+        <section id="use">
+          <h2>3. Why information is used</h2>
+          <ul>
+            <li>Provide game progress, purchases, Prism balances and wallet recovery.</li>
+            <li>Verify Apple transactions, prevent duplicate credit and handle refunds or revocations.</li>
+            <li>Authenticate devices, protect accounts and prevent abuse or fraud.</li>
+            <li>Offer an optional rewarded-ad revive and record the consent choices needed for advertising.</li>
+            <li>Diagnose failures, secure services and answer support or privacy requests.</li>
+            <li>Comply with legal duties and enforce applicable terms.</li>
+          </ul>
+          <p>The legal basis for each use can depend on where you live and requires final legal confirmation before launch. Expected bases include performing the game service you request, legitimate interests in security and fraud prevention, consent for advertising where required, and legal obligations for transaction records.</p>
+        </section>
+
+        <section id="sharing">
+          <h2>4. Service providers and sharing</h2>
+          <p>Information may be processed by Apple for App Store distribution, StoreKit purchases, App Transaction and Sign in with Apple; by Google for AdMob and UMP; by the wallet service’s cloud and database hosts; and by Cloudflare for website delivery and security. These providers may process information in countries other than yours under their own terms and applicable transfer mechanisms.</p>
+          <p>LOCKFRAME does not sell personal information. It does not share data for cross-context behavioral advertising by the developer. Information may also be disclosed if required by law, to protect users or the service, or as part of a business reorganization subject to appropriate safeguards.</p>
+        </section>
+
+        <section id="retention">
+          <h2>5. Retention</h2>
+          <ul>
+            <li><strong>Local game data:</strong> kept on the device until you reset the game or remove it, subject to Apple backup and Keychain behavior.</li>
+            <li><strong>Wallet account and ledger:</strong> the current backend does not yet implement an automatic retention period or deletion endpoint. Records are expected to remain while the wallet is active and until a verified deletion request is completed, except transaction, refund, anti-fraud, security or accounting records that must be retained for a legally required or reasonably necessary period.</li>
+            <li><strong>Support messages:</strong> retained as long as reasonably needed to answer the request, keep a record of the resolution and meet legal obligations.</li>
+            <li><strong>Google, Apple, Cloudflare and infrastructure logs:</strong> retained under the relevant provider settings and policies. Final production log retention has not yet been selected.</li>
+          </ul>
+          <p class="notice"><strong>Legal confirmation required:</strong> exact production retention periods, the legal-entity/controller details, hosting regions, international-transfer terms and the final legal bases must be approved before public launch.</p>
+        </section>
+
+        <section id="choices">
+          <h2>6. Your choices and deletion</h2>
+          <p>You can decline an optional rewarded ad or, where offered by UMP, revisit advertising choices through <strong>Help → Privacy Options</strong>. You may also manage Apple privacy and device settings directly in iOS.</p>
+          <p>To request access, correction, a copy or deletion of information controlled by LOCKFRAME, email <a href="mailto:ogulcangogceloglu@gmail.com?subject=LOCKFRAME%20privacy%20request">ogulcangogceloglu@gmail.com</a> with the subject “LOCKFRAME privacy request.” Include enough information to locate the wallet, such as the in-game player or wallet identifier if available. <strong>Never send a password, Apple ID password, Keychain secret, identity token or full signed transaction.</strong> We may need to verify that the wallet belongs to you. Data that must be retained for legal, fraud-prevention, transaction-integrity or dispute purposes may be isolated and kept for the required period.</p>
+          <p>The reviewed app does not yet provide an in-app account-deletion control, and the backend has no deletion endpoint. Because the game automatically creates a server-side account, an in-app way to initiate deletion should be added before App Store submission. Email is the current pre-release contact route, not a substitute for that required product change.</p>
+        </section>
+
+        <section id="security">
+          <h2>7. Security</h2>
+          <p>The wallet design uses HTTPS, hashed device credentials, Apple-signed transaction verification, unique transaction and operation identifiers, database transactions and rate limits. No method of transmission or storage is completely secure. Do not send sensitive credentials through support email.</p>
+        </section>
+
+        <section id="children">
+          <h2>8. Children</h2>
+          <p>The game’s final age rating and child-directed treatment have not yet been confirmed. The current advertising request code does not set a child-directed or under-age-of-consent flag. This must be reviewed against the intended audience and launch regions before release. Parents or guardians can contact us about a child’s information using the address below.</p>
+        </section>
+
+        <section id="contact">
+          <h2>9. Contact and changes</h2>
+          <p>For privacy questions or requests, email <a href="mailto:ogulcangogceloglu@gmail.com">ogulcangogceloglu@gmail.com</a>. The developer’s full legal identity and postal address need legal confirmation before launch and will be added here if required.</p>
+          <p>We may update this policy as the shipping build, providers or legal requirements change. Material changes will be reflected by the “Last updated” date and, when appropriate, an in-game notice.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="footer-grid shell"><span>© 2026 LOCKFRAME</span><div class="footer-links"><a href="/">Game</a><a href="/support/">Support</a><a href="/privacy/tr/" lang="tr">Türkçe</a></div></div></footer>
+</body>
+</html>
+
