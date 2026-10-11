@@ -26,7 +26,7 @@ Cloudflare's GitHub App must be allowed to access this repository.
    - Build command: `npm run build`
    - Build output directory: `dist`
    - Root directory: leave empty
-   - Environment variable: `NODE_VERSION=20`
+   - Environment variable: `NODE_VERSION=22`
 
 5. Review `LEGAL_REVIEW.md`, run `npm run build` locally and inspect `dist/` before selecting
    **Save and Deploy**.

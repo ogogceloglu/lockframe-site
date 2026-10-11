@@ -22,7 +22,7 @@ advertising code.
 
 ## Local verification
 
-Requires Node 20 or later; there are no npm dependencies.
+Requires Node 22 or later; there are no npm dependencies.
 
 ```sh
 npm run check
@@ -55,4 +55,3 @@ counsel confirmation.
 
 Deployment is documented in `DEPLOYMENT.md`. Nothing in this repository changes DNS or performs a
 deployment.
-
