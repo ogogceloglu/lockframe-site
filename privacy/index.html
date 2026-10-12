@@ -64,7 +64,10 @@
             <li><strong>Apple purchase records</strong>Apple transaction and original transaction identifiers, product ID, credited Prism amount, StoreKit environment, purchase date, revocation date and record creation date. LOCKFRAME does not receive your payment-card details.</li>
             <li><strong>Apple-linked recovery identifiers</strong>An Apple-signed App Transaction identifier and environment may be stored to recover the wallet across reinstall or devices. If Sign in with Apple is used, the stable Apple subject identifier is stored. The current implementation requests an identity token only and does not request your name or email address.</li>
           </ul>
-          <p>If you reinstall the game, your remaining Prism and cosmetic items you unlocked with Prism are restored from the wallet ledger. Other progress is stored only on the device.</p>
+          <p>If you reinstall the game, your remaining Prism and cosmetic items you unlocked with Prism are restored from the wallet ledger.</p>
+          <ul class="data-list">
+            <li><strong>Game progress backup</strong>So that a reinstall or a new device can restore your game, the wallet service also keeps a copy of your game progress linked to your pseudonymous player account: LF and item balances, missions, unlocked worlds and mastery, scores and records, recent Daily Frame results, owned and equipped cosmetics, and tutorial / introduction status, with a revision number and update time. It contains no name, email address, Prism balance or payment data. It is deleted when you delete your account.</li>
+          </ul>
           <p>The device keeps an authentication credential in Apple Keychain for convenience. The server stores only a SHA-256 hash of the secret, not the secret itself.</p>
 
           <h3>Apple in-app purchases</h3>
