@@ -44,11 +44,18 @@ for (const file of htmlFiles) {
 for (const privacyPath of ["privacy/index.html", "privacy/tr/index.html"]) {
   const html = readFileSync(join(root, privacyPath), "utf8");
   if (/<script\b/i.test(html)) fail(`${privacyPath}: scripts are not allowed`);
-  for (const alternatives of [["AdMob"], ["UMP"], ["Apple"], ["Prism", "Prizma"], ["deletion", "silme"], ["ogulcangogceloglu@gmail.com"]]) {
+  for (const alternatives of [["AdMob"], ["UMP"], ["Apple"], ["Prism", "Prizma"], ["deletion", "silme"], ["ogulcangogceloglu@gmail.com"], ["Unity Technologies"], ["IDFV"], ["Account &amp; Privacy", "Hesap ve Gizlilik"], ["102571"]]) {
     if (!alternatives.some((required) => html.toLocaleLowerCase("en").includes(required.toLocaleLowerCase("en")))) {
       fail(`${privacyPath}: missing privacy topic ${alternatives.join("/")}`);
     }
   }
+}
+
+// 0.7.1: the published policy must not claim missing in-app deletion (it now exists).
+for (const page of ["privacy/index.html", "privacy/tr/index.html", "support/index.html", "support/tr/index.html"]) {
+  const html = readFileSync(join(root, page), "utf8");
+  if (/does not yet provide an in-app account-deletion|henüz uygulama içi hesap silme/i.test(html)) fail(`${page}: stale "no in-app deletion" statement`);
+  if (/Help → Privacy Options|choose Privacy Options|Yardım → Gizlilik Seçenekleri|Yardım bölümünden Gizlilik/.test(html)) fail(`${page}: stale Privacy Options path`);
 }
 
 const sellerLine = readFileSync(join(root, "app-ads.txt"), "utf8").trim();

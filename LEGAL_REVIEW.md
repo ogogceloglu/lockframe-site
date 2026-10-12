@@ -16,14 +16,41 @@ what must be confirmed before public launch.
 | Apple identity | `Assets/Plugins/iOS/LockframeAppTransaction.swift`, `NativeIdentity.cs`, `Backend/src/apple.js` | App Transaction recovery plus Sign in with Apple identity-token flow; no name/email request in the reviewed implementation |
 | Deployment state | `Docs/PurchaseRecovery.md`, `Docs/LAUNCH_PLAN.md` | wallet backend, live StoreKit verification, production AdMob setup and device recovery validation are not yet complete |
 
+## 0.7.1 policy update (2026-10-12, branch `privacy-0.7.1`, not published)
+
+The policy now discloses the following; it is based on `LockFrame/Docs/PrivacyPolicyReview070.md`:
+- **Unity In-App Purchasing 5.4 purchase telemetry to Unity Technologies:**
+  - IDFV, read unconditionally on iOS by the package (`PlayerData.CreatePlayerIdentityAsync`);
+  - Unity installation and session ids;
+  - device info (model, OS, locale, boot time, disk size);
+  - product and App Store transaction id;
+  - app version and install time;
+  - country.
+  This was verified from the package source; a device proxy capture is recommended.
+- In-app account deletion and what is kept.
+- Sign in with Apple revocation handling (TN3194).
+- Restored Prism cosmetics.
+- The new Account & Privacy path.
+- In-memory IP use for rate limiting.
+- Azure North Europe hosting; 7-day backups.
+- The Apple Watch data flow.
+
+App Store Connect "App Privacy" answers must match the matrix in
+`LockFrame/Docs/PrivacyPolicyReview070.md` §5. Unity adds the **Analytics** purpose to Device ID,
+Purchase History, Product Interaction, Coarse Location and Other Diagnostic Data. Tracking stays
+**No**.
+
 ## Must be resolved before public launch
 
-1. **Account deletion is an App Store submission blocker.** The game automatically creates a
-   server-side account, but the client has no in-app deletion control and the backend has no delete
-   endpoint. Apple says automatically generated accounts must be deletable and deletion must be
-   initiable in-app. Implement an authenticated, auditable deletion flow, decide what ledger records
-   must be retained, and revoke Sign in with Apple tokens where applicable.
-   Reference: <https://developer.apple.com/help/app-review/guideline-reference/5-1-1-account-deletion>
+1. **Account deletion (0.7.x, 2026-10-12): implemented.**
+   - In-app path: Help → Account & Privacy → Delete Account, two steps.
+   - Server: `DELETE /v1/account` (deployed to staging; production pending).
+   - Sign in with Apple: LOCKFRAME stores no Apple tokens, so per Apple TN3194 the app shows the
+     manual revocation steps (support.apple.com/102571).
+   - Still open:
+     - production deployment;
+     - the **retention period** for pseudonymous financial records of deleted accounts (the policy
+       says "being confirmed"; do not invent one).
 2. Confirm the data controller's full legal name, postal address and jurisdiction. The current public
    contact is the verified real address `ogulcangogceloglu@gmail.com`; do not invent a company or
    support alias.

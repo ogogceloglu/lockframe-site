@@ -27,7 +27,7 @@
       <p class="eyebrow">Privacy Policy</p>
       <h1>Your perspective is yours.</h1>
       <p class="page-lede">This policy explains how LOCKFRAME: Perspective Run and this website handle information. It is written from a review of the current game client, Google advertising integration and Prism wallet backend.</p>
-      <p class="updated"><strong>Last updated:</strong> October 11, 2026 · <strong>Effective:</strong> when the public release becomes available</p>
+      <p class="updated"><strong>Last updated:</strong> October 12, 2026 · <strong>Effective:</strong> when the public release becomes available</p>
     </header>
 
     <div class="legal-layout">
@@ -47,23 +47,24 @@
       <article class="legal-content">
         <section id="scope">
           <h2>1. Scope and current status</h2>
-          <p>This policy covers the LOCKFRAME iOS game and <strong>lockframe.games</strong>. “We” and “LOCKFRAME” mean the game developer. The public game is not yet available on the App Store. As of the date above, the rewarded-ad and wallet systems are implemented in code, but their production services still require final external setup and live-device validation. This policy must be checked again against the exact shipping build before release.</p>
+          <p>This policy covers the LOCKFRAME iOS game and <strong>lockframe.games</strong>. “We” and “LOCKFRAME” mean the game developer. The public game is not yet available on the App Store. As of the date above, the Prism wallet and Apple in-app purchases have been tested with Apple’s sandbox on physical devices; the production wallet service and production advertising still require final setup. This policy must be checked again against the exact shipping build before release.</p>
           <p class="notice"><strong>No website tracking:</strong> this website sets no cookies, runs no analytics, contains no advertising scripts and has no forms or login wall. The Privacy Policy is available publicly without consent prompts.</p>
         </section>
 
         <section id="collect">
           <h2>2. Information handled</h2>
           <h3>On-device game data</h3>
-          <p>The game stores progress and settings on your device, including scores, distance, tutorial state, missions, world mastery, inventory, selected language, recent openings and currency state. This information supports gameplay and restoring your local experience. Uninstalling or resetting the app may remove local data, except information separately held by Apple, Google or the Prism wallet service.</p>
+          <p>The game stores progress and settings on your device, including scores, distance, tutorial state, missions, world mastery, inventory, selected language, recent openings and currency state. The Apple Watch app shows information that the game on your iPhone sends over Apple’s Watch connection; it does not contact our servers. This information supports gameplay and restoring your local experience. Uninstalling or resetting the app may remove local data, except information separately held by Apple, Google or the Prism wallet service.</p>
 
           <h3>Prism wallet and server-side player account</h3>
           <p>When the production wallet service is enabled, the game automatically creates a pseudonymous player account. It does not ask for a profile name, email address, phone number or password. The service is designed to store:</p>
           <ul class="data-list">
-            <li><strong>Account and authentication</strong>A random player UUID; a one-way hash of each device credential; account creation, last-seen and credential timestamps; and the credential source. The newest ten credential hashes may be retained so multiple devices do not sign each other out.</li>
+            <li><strong>Account and authentication</strong>A random player UUID; a one-way hash of each device credential; account creation, last-seen and credential timestamps; the credential source; and, if you delete your account, the deletion time. The newest ten credential hashes may be retained so multiple devices do not sign each other out.</li>
             <li><strong>Wallet and gameplay ledger</strong>Purchased and earned Prism balances, refund debt, wallet version and timestamps; and ledger entries such as operation ID, grant/spend/refund type, amount, reason, product ID, environment and time.</li>
             <li><strong>Apple purchase records</strong>Apple transaction and original transaction identifiers, product ID, credited Prism amount, StoreKit environment, purchase date, revocation date and record creation date. LOCKFRAME does not receive your payment-card details.</li>
             <li><strong>Apple-linked recovery identifiers</strong>An Apple-signed App Transaction identifier and environment may be stored to recover the wallet across reinstall or devices. If Sign in with Apple is used, the stable Apple subject identifier is stored. The current implementation requests an identity token only and does not request your name or email address.</li>
           </ul>
+          <p>If you reinstall the game, your remaining Prism and cosmetic items you unlocked with Prism are restored from the wallet ledger. Other progress is stored only on the device.</p>
           <p>The device keeps an authentication credential in Apple Keychain for convenience. The server stores only a SHA-256 hash of the secret, not the secret itself.</p>
 
           <h3>Apple in-app purchases</h3>
@@ -71,6 +72,7 @@
 
           <h3>Sign in with Apple</h3>
           <p>The client and backend include Sign in with Apple for wallet protection and recovery. On supported systems the game first tries automatic recovery using Apple’s App Transaction. Sign in with Apple is optional when that durable identity is available; it may be required before a real-money purchase when no durable Apple-verified identity exists. Nothing is charged before that identity step succeeds.</p>
+          <p>To detect if you later stop using Sign in with Apple for LOCKFRAME, the game keeps Apple’s anonymous user identifier for LOCKFRAME on your device and checks its status with Apple; if you stopped using it, the link is removed from your wallet. LOCKFRAME does not store Apple access or refresh tokens.</p>
 
           <h3>Google AdMob rewarded ads</h3>
           <p>The game includes Google Mobile Ads for <strong>rewarded ads only</strong>. The planned placement is the first death in an Adventure run. Ads do not appear in the tutorial, Daily Frame, later deaths or the Apple Watch app. Watching is optional; closing early or an ad failure grants no reward, and declining consent does not block the rest of the game.</p>
@@ -78,10 +80,13 @@
           <p>The current LOCKFRAME configuration does not request App Tracking Transparency authorization and is not intended to access the IDFA or track you across other companies’ apps and websites. Google may still use other identifiers and data for limited advertising, frequency capping, aggregated reporting, security and fraud prevention where permitted.</p>
 
           <h3>Google User Messaging Platform (UMP)</h3>
-          <p>UMP asks for updated consent information before the game requests an ad and shows Google’s consent form when required for your region. Ads are requested only when the SDK reports that they may be requested. Where required, the Help screen offers a Privacy Options entry so you can revisit your choice. The exact message still has to be configured in the AdMob console before public release.</p>
+          <p>UMP asks for updated consent information before the game requests an ad and shows Google’s consent form when required for your region. Ads are requested only when the SDK reports that they may be requested. Where required, <strong>Help → Account &amp; Privacy → Privacy Options</strong> lets you revisit your choice. The exact message still has to be configured in the AdMob console before public release.</p>
 
           <h3>Analytics and diagnostics</h3>
           <p>LOCKFRAME has no separate third-party gameplay analytics SDK. Gameplay event tracking in the reviewed build is local: in developer builds it can write event names to the device log when a debug flag is enabled, and it is not uploaded by LOCKFRAME. Unity Analytics and Unity Cloud Diagnostics are disabled in the reviewed project settings. Google Mobile Ads and UMP may independently collect ad-related interaction, performance, crash and diagnostic information as described above. Apple may provide App Store or TestFlight diagnostics according to your Apple settings and Apple’s terms.</p>
+
+          <h3>Unity In-App Purchasing library</h3>
+          <p>Apple in-app purchases in LOCKFRAME use Unity Technologies’ In-App Purchasing library (version 5.4). When you start, complete or cancel a purchase, this library sends technical purchase events directly to Unity Technologies, including the product, the App Store transaction identifier, your device’s identifier for vendor (IDFV), a Unity installation identifier and session identifier, device information (model, operating system version, language and region settings, storage size and start-up time), the app version and installation time; Unity may also derive your approximate country from the connection. LOCKFRAME does not receive or use this data, and it is not used to track you across other companies’ apps or websites by LOCKFRAME. Unity Technologies processes it under the <a href="https://unity.com/legal/privacy-policy">Unity Privacy Policy</a>.</p>
 
           <h3>This website</h3>
           <p>The site does not deliberately collect personal information. It has no accounts, forms, cookies, analytics pixels or ad SDKs. Cloudflare Pages hosts the site and may process network and security information such as IP address, request time, requested URL and user-agent data to deliver and protect it. See the <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare Privacy Policy</a>.</p>
@@ -102,7 +107,7 @@
 
         <section id="sharing">
           <h2>4. Service providers and sharing</h2>
-          <p>Information may be processed by Apple for App Store distribution, StoreKit purchases, App Transaction and Sign in with Apple; by Google for AdMob and UMP; by the wallet service’s cloud and database hosts; and by Cloudflare for website delivery and security. These providers may process information in countries other than yours under their own terms and applicable transfer mechanisms.</p>
+          <p>Information may be processed by Apple for App Store distribution, StoreKit purchases, App Transaction and Sign in with Apple; by Google for AdMob and UMP; by Unity Technologies for in-app purchase events (see “Unity In-App Purchasing library”); by Microsoft Azure, which hosts the wallet service and its database in the North Europe (Ireland) region; and by Cloudflare for website delivery and security. These providers may process information in countries other than yours under their own terms and applicable transfer mechanisms.</p>
           <p>LOCKFRAME does not sell personal information. It does not share data for cross-context behavioral advertising by the developer. Information may also be disclosed if required by law, to protect users or the service, or as part of a business reorganization subject to appropriate safeguards.</p>
         </section>
 
@@ -110,7 +115,7 @@
           <h2>5. Retention</h2>
           <ul>
             <li><strong>Local game data:</strong> kept on the device until you reset the game or remove it, subject to Apple backup and Keychain behavior.</li>
-            <li><strong>Wallet account and ledger:</strong> the current backend does not yet implement an automatic retention period or deletion endpoint. Records are expected to remain while the wallet is active and until a verified deletion request is completed, except transaction, refund, anti-fraud, security or accounting records that must be retained for a legally required or reasonably necessary period.</li>
+            <li><strong>Wallet account and ledger:</strong> kept while your account exists. When you delete your account, its device credentials and Apple identifiers are deleted immediately and its Prism balance is removed. The remaining purchase, refund and balance-change records are kept in pseudonymous form (no Apple identifier and no credential stays linked to them) for as long as required for accounting, tax, legal and fraud-prevention purposes; the exact period is being confirmed. These records also prevent a past purchase from being credited again. Database backups are kept for up to 7 days.</li>
             <li><strong>Support messages:</strong> retained as long as reasonably needed to answer the request, keep a record of the resolution and meet legal obligations.</li>
             <li><strong>Google, Apple, Cloudflare and infrastructure logs:</strong> retained under the relevant provider settings and policies. Final production log retention has not yet been selected.</li>
           </ul>
@@ -119,14 +124,15 @@
 
         <section id="choices">
           <h2>6. Your choices and deletion</h2>
-          <p>You can decline an optional rewarded ad or, where offered by UMP, revisit advertising choices through <strong>Help → Privacy Options</strong>. You may also manage Apple privacy and device settings directly in iOS.</p>
+          <p>You can decline an optional rewarded ad or, where offered by UMP, revisit advertising choices through <strong>Help → Account &amp; Privacy → Privacy Options</strong>. You may also manage Apple privacy and device settings directly in iOS.</p>
           <p>To request access, correction, a copy or deletion of information controlled by LOCKFRAME, email <a href="mailto:ogulcangogceloglu@gmail.com?subject=LOCKFRAME%20privacy%20request">ogulcangogceloglu@gmail.com</a> with the subject “LOCKFRAME privacy request.” Include enough information to locate the wallet, such as the in-game player or wallet identifier if available. <strong>Never send a password, Apple ID password, Keychain secret, identity token or full signed transaction.</strong> We may need to verify that the wallet belongs to you. Data that must be retained for legal, fraud-prevention, transaction-integrity or dispute purposes may be isolated and kept for the required period.</p>
-          <p>The reviewed app does not yet provide an in-app account-deletion control, and the backend has no deletion endpoint. Because the game automatically creates a server-side account, an in-app way to initiate deletion should be added before App Store submission. Email is the current pre-release contact route, not a substitute for that required product change.</p>
+          <p><strong>Delete your account in the game:</strong> Help → Account &amp; Privacy → Delete Account. After you confirm, we delete your account’s device credentials and its links to your Apple Account (the App Transaction identifier and, if you used it, your Sign in with Apple identifier), and your Prism balance is removed. The game data on that device is erased and the game starts again as a new player; if you keep playing, a new, separate account is created. Deleting your account does not refund purchases; refunds are requested from Apple. Purchase and refund records are kept as described under Retention.</p>
+          <p>If you used Sign in with Apple, the game also shows you how to stop using Sign in with Apple for LOCKFRAME in your Apple Account settings (<a href="https://support.apple.com/en-us/102571">Apple’s instructions</a>), because LOCKFRAME does not hold Apple tokens that could revoke it automatically. You can also request deletion by email, for example if you no longer have the device.</p>
         </section>
 
         <section id="security">
           <h2>7. Security</h2>
-          <p>The wallet design uses HTTPS, hashed device credentials, Apple-signed transaction verification, unique transaction and operation identifiers, database transactions and rate limits. No method of transmission or storage is completely secure. Do not send sensitive credentials through support email.</p>
+          <p>The wallet design uses HTTPS, hashed device credentials, Apple-signed transaction verification, unique transaction and operation identifiers, database transactions and rate limits. The wallet service uses your IP address briefly, in memory, to limit abusive request rates; it is not stored in the wallet database. No method of transmission or storage is completely secure. Do not send sensitive credentials through support email.</p>
         </section>
 
         <section id="children">
