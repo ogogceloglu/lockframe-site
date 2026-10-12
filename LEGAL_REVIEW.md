@@ -86,3 +86,30 @@ Google references:
 - <https://developers.google.com/admob/ios/privacy>
 - <https://developers.google.com/admob/ios/privacy/ad-serving-modes>
 
+
+## 1.0 policy update (2026-10-12, branch `privacy-0.7.1`, not published)
+
+All placeholder and pre-launch wording was removed from `privacy/` (EN) and `privacy/tr/` (TR).
+
+### Verified against code and infrastructure (read-only)
+
+| Policy statement | Evidence |
+|---|---|
+| Deletion removes credentials, Apple identifiers and the progress backup immediately, and zeroes the balance; pseudonymous financial rows remain | `Backend/src/wallet.js` `deleteAccount`: `delete from credentials`; `delete from profile_saves`; `players` gets `apple_sub` / `app_transaction_*` set to null, `secret_hash` replaced and `deleted_at`; an `account_deleted` ledger row |
+| Database backups up to 7 days | `az postgres flexible-server show lockframe-pg`: `backupRetentionDays 7`, geo-redundant backup disabled |
+| Wallet service logs kept 30 days, without IP or player ID | Log Analytics workspace of `lockframe-env`: `retentionInDays 30`. The `Backend/src/server.js` log lines carry `cid`, transaction id, product and environment. The IP is used only in memory for rate limits |
+| Rewarded ad only after the first Adventure fall; UMP before ads; Privacy Options | `AdMobRewardedAdService.cs`: `ConsentInformation.Update` → `LoadAndShowConsentFormIfRequired` → `CanRequestAds` → `MobileAds.Initialize`; `PrivacyOptionsRequirementStatus` |
+| The Watch app keeps its own results and sends its best to the iPhone; no server contact | `Native/Watch` (`WatchStats`, `WatchLink` over WCSession) |
+| Game Center: best Daily distance + date to Apple; player ID kept only on the device; no server copy | `GameCenterService.cs`, `DailyLeaderboard.cs`, `LockframeGameCenter.swift`; `PlayerProfile.gcPlayer`; not in `CloudSave.cs` |
+
+### Values chosen in the text: owner / legal confirmation required before publishing
+
+- Pseudonymous purchase, refund and balance records: **10 years** (proposal, in line with
+  commercial-record retention).
+- Support e-mails: **up to 2 years** after closing.
+- Controller: **Ogulcan Gogceloglu, individual developer, Türkiye**. No postal address is given;
+  add one if counsel requires it.
+- Children: **general audience, not directed to children, not in the Kids category**. This must
+  match the age rating chosen in App Store Connect.
+- UMP: the text says Google's consent message is shown where required. **The owner must confirm
+  that the GDPR message is published in AdMob → Privacy & messaging.**
