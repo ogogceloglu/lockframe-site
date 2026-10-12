@@ -102,14 +102,19 @@ All placeholder and pre-launch wording was removed from `privacy/` (EN) and `pri
 | The Watch app keeps its own results and sends its best to the iPhone; no server contact | `Native/Watch` (`WatchStats`, `WatchLink` over WCSession) |
 | Game Center: best Daily distance + date to Apple; player ID kept only on the device; no server copy | `GameCenterService.cs`, `DailyLeaderboard.cs`, `LockframeGameCenter.swift`; `PlayerProfile.gcPlayer`; not in `CloudSave.cs` |
 
-### Values chosen in the text: owner / legal confirmation required before publishing
+### Owner decision (2026-10-12): retention periods are not a 1.0 blocker
 
-- Pseudonymous purchase, refund and balance records: **10 years** (proposal, in line with
-  commercial-record retention).
-- Support e-mails: **up to 2 years** after closing.
-- Controller: **Ogulcan Gogceloglu, individual developer, Türkiye**. No postal address is given;
-  add one if counsel requires it.
-- Children: **general audience, not directed to children, not in the Kids category**. This must
-  match the age rating chosen in App Store Connect.
-- UMP: the text says Google's consent message is shown where required. **The owner must confirm
-  that the GDPR message is published in AdMob → Privacy & messaging.**
+The policy states **only verified behaviour** and makes no fixed-period promise:
+- **Verified periods:** 7-day backups, 30-day service logs.
+- **Deletion:** immediate on account deletion (credentials, Apple identifiers, progress backup,
+  balance).
+- **Not on a schedule:** pseudonymous financial records "are not deleted automatically today";
+  support mail is "kept … you can ask us to delete them".
+- **Factual statements:**
+  - Controller: Ogulcan Gogceloglu, individual developer, Türkiye.
+  - Children: general audience, not in the Kids category, no child-directed ad flag. This must
+    still match the chosen age rating.
+- **Owner check before publishing:** the UMP GDPR message is published in AdMob → Privacy &
+  messaging.
+- **Post-launch:** retention optimization (deletion schedules for pseudonymous ledgers and
+  support mail, inactive accounts). `LockFrame/Docs/LAUNCH_PLAN.md` 5.8.
