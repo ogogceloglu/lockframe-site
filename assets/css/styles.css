@@ -252,8 +252,7 @@ p {
 }
 
 .button,
-.button-quiet,
-.store-button {
+.button-quiet {
   display: inline-flex;
   min-height: 52px;
   align-items: center;
@@ -522,11 +521,17 @@ p {
 .store-button {
   position: relative;
   z-index: 2;
-  min-width: 210px;
-  color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  background: rgba(35, 38, 46, 0.18);
-  cursor: pointer;
+  display: inline-block;
+  justify-self: start;
+  margin: 14px;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.store-button img {
+  display: block;
+  width: auto;
+  height: 56px;
 }
 
 .site-footer {

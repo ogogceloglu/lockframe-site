@@ -48,6 +48,8 @@ for (const page of ["index.html", "tr/index.html"]) {
     fail(`${page}: missing approved App Store listing link`);
   }
   if (/TODO\(APP_STORE_URL\)|aria-disabled="true"/.test(html)) fail(`${page}: stale disabled App Store button`);
+  const badge = page.startsWith("tr/") ? "tr" : "en";
+  if (!html.includes(`src="/assets/images/app-store-badge-${badge}.svg"`)) fail(`${page}: missing localized App Store badge`);
 }
 
 for (const privacyPath of ["privacy/index.html", "privacy/tr/index.html"]) {

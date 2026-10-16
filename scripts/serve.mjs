@@ -10,6 +10,7 @@ const types = {
   ".html": "text/html; charset=utf-8",
   ".jpg": "image/jpeg",
   ".png": "image/png",
+  ".svg": "image/svg+xml",
   ".ttf": "font/ttf",
   ".txt": "text/plain; charset=utf-8",
   ".xml": "application/xml; charset=utf-8"
