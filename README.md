@@ -38,8 +38,9 @@ to it, preventing cached styles from being mixed with a newer release.
 
 Both landing pages link to the owner-supplied listing:
 https://apps.apple.com/app/lockframe-perspective-run/id6819255343 .
-The copy still says coming soon until the owner releases the approved game.
-After release, update that copy and test the listing on a real device.
+LOCKFRAME 1.0 is publicly available; both landing pages show download badges and
+released-state copy. The listing was confirmed through Apple's public lookup on
+October 16, 2026. The owner controls game releases in App Store Connect separately.
 
 The versioned 64px favicon `assets/images/favicon-v2.png` is derived from the game's
 current `Assets/_Lockframe/Branding/AppIcon.png`. Its separate path refreshes browser

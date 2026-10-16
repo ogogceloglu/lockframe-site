@@ -34,6 +34,9 @@ for (const file of htmlFiles) {
   if (!/<meta name="viewport"/.test(html)) fail(`${relative(root, file)}: missing viewport meta`);
   if (!html.includes('href="/assets/images/favicon-v2.png"')) fail(`${relative(root, file)}: missing current game favicon`);
   if (/https?:\/\/lockframe\.game(?:[\/:?#]|$)/.test(html)) fail(`${relative(root, file)}: wrong singular domain`);
+  if (/coming soon|coming to the app store|not yet publicly available|yakında|henüz App Store|when the public release becomes available|herkese açık sürüm yayınlandığında/i.test(html)) {
+    fail(`${relative(root, file)}: stale pre-release copy`);
+  }
 
   const references = [...html.matchAll(/(?:href|src)="([^"]+)"/g)].map((match) => match[1]);
   for (const reference of references) {

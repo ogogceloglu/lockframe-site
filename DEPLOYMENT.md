@@ -1,6 +1,9 @@
 # Cloudflare Pages deployment (GitHub integration)
 
-These are manual instructions. The site has **not** been deployed and DNS has **not** been changed.
+The site is live at https://lockframe.games through Cloudflare Pages, connected to
+`ogogceloglu/lockframe-site` (`main`). These instructions document the existing setup
+and how to reproduce it; normal updates deploy through GitHub pushes. No DNS change
+is needed for content updates.
 
 ## 1. GitHub repository
 
@@ -56,7 +59,7 @@ Confirm all of the following after deployment:
 - language, canonical and alternate links resolve correctly
 - security headers from `_headers` are present
 - mobile layouts at 320 px, 390 px and tablet/desktop widths
-- App Store buttons use the owner-supplied listing URL; coming-soon copy remains until release
+- App Store badges use the owner-supplied listing URL and the site states the game is available
 
 Finally, set the App Store Connect Privacy Policy URL to
 `https://lockframe.games/privacy/`, the Support URL to `https://lockframe.games/support/`, and the
