@@ -34,12 +34,14 @@ Then open `http://127.0.0.1:4173`. After `npm run build`, the server previews `d
 
 ## App Store link
 
-No App Store URL is invented or hidden in the site. When the public listing exists:
+Both landing pages link to the owner-supplied listing:
+https://apps.apple.com/app/lockframe-perspective-run/id6819255343 .
+The copy still says coming soon until the owner releases the approved game.
+After release, update that copy and test the listing on a real device.
 
-1. Replace the disabled `.store-button` span in `index.html` and `tr/index.html` with an anchor.
-2. Use the exact public App Store URL from App Store Connect.
-3. Remove the nearby `TODO(APP_STORE_URL)` comment.
-4. Run `npm run check` and test the link on a real device.
+The versioned 64px favicon `assets/images/favicon-v2.png` is derived from the game's
+current `Assets/_Lockframe/Branding/AppIcon.png`. Its separate path refreshes browser
+favicon caches without changing the landing page artwork or social sharing image.
 
 ## Asset provenance
 

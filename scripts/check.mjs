@@ -32,6 +32,7 @@ for (const file of htmlFiles) {
   if (!/^<!doctype html>/i.test(html)) fail(`${relative(root, file)}: missing HTML doctype`);
   if (!/<html lang="(?:en|tr)">/.test(html)) fail(`${relative(root, file)}: missing supported lang attribute`);
   if (!/<meta name="viewport"/.test(html)) fail(`${relative(root, file)}: missing viewport meta`);
+  if (!html.includes('href="/assets/images/favicon-v2.png"')) fail(`${relative(root, file)}: missing current game favicon`);
   if (/https?:\/\/lockframe\.game(?:[\/:?#]|$)/.test(html)) fail(`${relative(root, file)}: wrong singular domain`);
 
   const references = [...html.matchAll(/(?:href|src)="([^"]+)"/g)].map((match) => match[1]);
@@ -39,6 +40,14 @@ for (const file of htmlFiles) {
     const target = localTarget(reference);
     if (target && !existsSync(target)) fail(`${relative(root, file)}: missing ${reference}`);
   }
+}
+
+for (const page of ["index.html", "tr/index.html"]) {
+  const html = readFileSync(join(root, page), "utf8");
+  if (!/<a class="store-button" href="https:\/\/apps\.apple\.com\/app\/lockframe-perspective-run\/id6819255343">/.test(html)) {
+    fail(`${page}: missing approved App Store listing link`);
+  }
+  if (/TODO\(APP_STORE_URL\)|aria-disabled="true"/.test(html)) fail(`${page}: stale disabled App Store button`);
 }
 
 for (const privacyPath of ["privacy/index.html", "privacy/tr/index.html"]) {

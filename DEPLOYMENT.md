@@ -56,7 +56,7 @@ Confirm all of the following after deployment:
 - language, canonical and alternate links resolve correctly
 - security headers from `_headers` are present
 - mobile layouts at 320 px, 390 px and tablet/desktop widths
-- no App Store link exists until the public listing is live
+- App Store buttons use the owner-supplied listing URL; coming-soon copy remains until release
 
 Finally, set the App Store Connect Privacy Policy URL to
 `https://lockframe.games/privacy/`, the Support URL to `https://lockframe.games/support/`, and the
