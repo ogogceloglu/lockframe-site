@@ -31,6 +31,8 @@ npm run dev
 ```
 
 Then open `http://127.0.0.1:4173`. After `npm run build`, the server previews `dist/`.
+The build gives CSS a content-hashed filename and rewrites every generated HTML page
+to it, preventing cached styles from being mixed with a newer release.
 
 ## App Store link
 

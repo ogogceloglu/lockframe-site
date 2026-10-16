@@ -523,7 +523,11 @@ p {
   z-index: 2;
   display: inline-block;
   justify-self: start;
-  margin: 14px;
+  margin: 16px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
   line-height: 0;
   text-decoration: none;
 }
@@ -531,7 +535,8 @@ p {
 .store-button img {
   display: block;
   width: auto;
-  height: 56px;
+  height: 64px;
+  cursor: pointer;
 }
 
 .site-footer {
@@ -745,6 +750,10 @@ p {
 
   .store-button {
     justify-self: start;
+  }
+
+  .store-button img {
+    height: 56px;
   }
 
   .legal-layout {
